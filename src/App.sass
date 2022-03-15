@@ -23,19 +23,21 @@ body
   height: 100vh
 
 .my-todo
-
+  width: 100%
   max-width: 300px
   display: flex
   flex-direction: column
   align-items: center
   h1
     padding: 20px
+  .my-todos
+    width: 100%
 
   .write-new-todo
     padding: 5px
     border-radius: 5px
     outline: none
-    width: 68%  
+    width: 68%
   .my-todo-header, .todo-item
     padding: 0 10px 20px
     width: 100%
@@ -44,7 +46,8 @@ body
     justify-content: space-between
 
   .todo-item-task
-    max-width: 68%
+    width: 68%
+    word-break: break-word
   .actions
     width: 30%
     display: flex

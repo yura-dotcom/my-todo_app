@@ -22,20 +22,26 @@ function App() {
   function addTodo(e) {
     e.preventDefault();
     let todoIds = [];
-    todos.map(todo => todoIds.push(todo.id))
+    let newId;
+    if (todos.length !== 0) {
+      todos.map(todo => todoIds.push(todo.id))
+      newId = Math.max(...todoIds) + 1;
+    } else {
+      newId = 1;
 
-    let newId = Math.max(...todoIds) + 1;
+    }
 
     if (newTask) {
       setTodos([...todos, { taskValue: newTask, isDone: false, id: newId }]);
     }
     setNewTask('')
+    // console.log(todos)
   }
 
   function isTaskDone(ind) {
     let newList = [];
     todos.map(todo => {
-      if (todo.id == todos[ind].id) {
+      if (todo.id === todos[ind].id) {
         todo.isDone = !todo.isDone
       }
       newList.push(todo)
